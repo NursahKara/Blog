@@ -1,0 +1,57 @@
+﻿
+@{
+	ViewBag.Title = "icerikler";
+	Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row ml-3 mt-2">
+	<form action="/Admin/CreateContent" method="post" enctype="multipart/form-data">
+		<p style="color:#000;" class="ml-3 mt-3">
+			Başlık:
+			<hr /><input class=" w-75" type="text" name="baslik" required  />
+		</p>
+		<br />
+		<p style="color:#000;" class="ml-3">
+			İçerik:
+			<hr /><Textarea TextMode="Multiline" name="metin" id="metin" required></Textarea>
+
+		
+			<script>
+        CKEDITOR.replace('metin');
+			</script>
+				
+		</p>
+	<!--	<hr /><textarea class="ml-4" name="metin" required></textarea></p>-->
+		<br />
+		<p style="color:#000;" class="ml-3">
+			Dosya Seçiniz:
+			<hr /><input class="ml-3" type="file" name="baslikfoto" accept="image/png, image/jpg,image/jpeg" />
+		</p>
+		<br />
+		<div>
+			<p style="color:#000;" class="col-12">
+				İçerik Türü:
+				<hr>
+				<div class="mt-2">
+					<label style="color:#000;" class="col-6 ">Makale:<input class="ml-2" type="radio" name="icerikturu" value="0" checked /></label>
+					<label style="color:#000;" class="col-6">REACT-NATIVE:<input class="ml-2" type="radio" name="icerikturu" value="1" /></label>
+					<label style="color:#000;" class="col-6">C++:<input class="ml-2" type="radio" name="icerikturu" value="2" /></label>
+					<label style="color:#000;" class="col-6">C#:<input class="ml-2" type="radio" name="icerikturu" value="3" /></label>
+					<label style="color:#000;" class="col-6">JAVA:<input class="ml-2" type="radio" name="icerikturu" value="4" /></label>
+					<label style="color:#000;" class="col-6">HTML/CSS/JAVASCRIPT:<input class="ml-2" type="radio" name="icerikturu" value="5" /></label>
+					<label style="color:#000;" class="col-6">Veri Tabanı:<input class="ml-2" type="radio" name="icerikturu" value="6" /></label>
+					<label style="color:#000;" class="col-6">Mobil:<input class="ml-2" type="radio" name="icerikturu" value="7" /></label>
+				</div>
+			</p>
+		</div>
+		<p style="color:#000;" class="ml-3 mt-3">
+			Yazar:
+			<hr /><input class="w-75" type="text" name="yazar" required />
+		</p>
+		<Button class="col-6 btn btn-dark"  value="Yükle" type="submit" OnClick="save" Text="save">Yükle</Button>
+	</form>
+
+</div>
+
+
+

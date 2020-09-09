@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Sliderlar";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="row ml-3 mt-5">
+	<form action="/Admin/sliderUpload" method="post" enctype="multipart/form-data">
+		<p style="color:#000;">Slider Seç!<hr />
+		<br />
+		<br />
+		<input type="file" name="sliderfoto" accept="image/png, image/jpg,image/jpeg" /></p>
+		<br />
+		<button class="col-6 btn btn-dark" type="submit">Yükle</button>
+	</form>
+</div>
+

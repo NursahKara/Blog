@@ -1,0 +1,31 @@
+﻿@{
+	ViewBag.Title = "C#";
+}
+
+<div class="container mt-5">
+	@foreach (var item in Model)
+	{<center>
+		<div class="row mt-5 col-8">
+
+			<a href="/Home/Makale/@item.icerikID" style="text-decoration:none;color: black;" class="col-12">
+				<div class="card w-75">
+					<img src="@item.BaslikFoto" class="card-img-top w-100" alt="@item.Baslik" title="@item.Baslik" style="height:180px;">
+					<div class="card-body">
+						<h6 class="card-title mt-5 text-center justify-content-center">@item.Baslik</h6>
+						<span href="/Home/Makale/@item.icerikID" class="btn btn-info">Devamını oku</span>
+					</div>
+				</div>
+			</a>
+
+		</div>
+	</center>
+	}
+
+	<ul class="pagination text-center justify-content-center">
+		<li class="page-item"><a class="page-link" href="#">Önceki Sayfa</a></li>
+		<li class="page-item"><a class="page-link" href="#">1</a></li>
+		<li class="page-item"><a class="page-link" href="#">2</a></li>
+		<li class="page-item"><a class="page-link" href="#">3</a></li>
+		<li class="page-item"><a class="page-link" href="#">Sonraki Sayfa</a></li>
+	</ul>
+</div>

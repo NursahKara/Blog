@@ -1,0 +1,126 @@
+﻿
+
+<div class="float-right w-25 h-100 mt-5">
+	<form class="form-inline my-2 my-lg-0">
+		<input class="form-control mr-sm-2" type="search" placeholder="Ara" aria-label="Search">
+		<button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Ara</button>
+	</form>
+
+
+	<div class="row">
+		<div class="col">
+			<div class="row pl-3">
+				<h5 class="widget-title pt-5 " style="border-bottom-color:#001d6d">
+					<span>SON EKLENENLER</span>
+				</h5>
+			</div>
+			<div class="row">
+				<div class="w-100 pl-3  " style="padding-right:68px;  ">
+					<hr>
+				</div>
+			</div>
+			@foreach (var item in Model.SonEklenenler)
+			{
+			
+				<ul style="list-style-type:none;" class="ml-n4">
+					<li><a href="/Home/Makale/@item.icerikID" style="color:black">@item.Baslik</a></li>
+				</ul>
+				
+			}
+	
+		</div>
+	</div>
+	<br><br><br>
+	<div class="row">
+		<div class="col">
+			<div class="row pl-3">
+				<h5 class="widget-title " style="border-bottom-color:#001d6d">
+					<span>EN ÇOK OKUNANLAR</span>
+				</h5>
+			</div>
+			<div class="row">
+				<div class="w-100 pl-3  " style="padding-right:68px;  ">
+					<hr>
+				</div>
+			</div>
+			@foreach (var item in Model.SonEklenenler)
+			{
+
+				<ul style="list-style-type:none;" class="ml-n4">
+					<li><a href="/Home/Makale/@item.icerikID" style="color:black">@item.Baslik</a></li>
+				</ul>
+
+			}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<div class="row pl-3">
+				<h5 class="widget-title pt-5 " style="border-bottom-color:#001d6d">
+					<span>SOSYAL MEDYA</span>
+				</h5>
+			</div>
+			<div class="row">
+				<div class="w-100 pl-3  " style="padding-right:68px;  ">
+					<hr>
+				</div>
+			</div>
+			<div class="row">
+				<a class="float-left mt-3 col-4 " href="http://www.facebook.com" target="_blank" title="facebook">
+					<div class="social">
+						<div class="facebook">
+							<img src="~/images/facebook.png" style="width: 40px; height: 40px;">
+						</div>
+					</div>
+				</a>
+				<a class="float-left mt-3 col-4" href="http://twitter.com/nursahh_kara" target="_blank" title="twitter">
+					<div class="social">
+						<div class="twitter">
+							<img src="~/images/twitter.jpg" style="width: 40px; height: 40px;">
+						</div>
+					</div>
+				</a>
+				<a class="float-left mt-3 col-4" href="http://Instagram.com/nursahh_kara" target="_blank" title="instagram">
+					<div class="social">
+						<div class="instagram">
+							<img src="~/images/instagram.jpg" style="width: 40px; height: 40px;">
+						</div>
+					</div>
+				</a>
+
+				<a class="float-left mt-3 col-4 " href="https://www.linkedin.com/in/nursah-kara/" target="_blank" title="linkedin">
+					<div class="social">
+						<div class="facebook">
+							<img src="~/images/linkedin.png" style="width: 40px; height: 40px;">
+						</div>
+					</div>
+				</a>
+				<a class="float-left mt-3 col-4 " href="https://github.com/NursahKara" target="_blank" title="github">
+					<div class="social">
+						<div class="facebook">
+							<img src="~/images/github.png" style="width: 40px; height: 40px;">
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<div class="row pl-3">
+				<h5 class="widget-title pt-5 " style="border-bottom-color:#001d6d">
+					<span></span>
+				</h5>
+			</div>
+			<div class="row" style="height:500px"></div>
+
+		</div>
+	</div>
+</div>
+
+

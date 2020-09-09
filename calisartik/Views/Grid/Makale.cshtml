@@ -1,0 +1,25 @@
+﻿@model IEnumerable<calisartik.Models.icerik>
+@using GridMvc.Html
+@{
+	ViewBag.Title = "Makale";
+}
+
+<div class="col-8 mt-5 text-center justify-content-center">
+	@Html.Grid(Model).Columns(Column =>
+   {
+   Column.Add().Encoded(false).Sanitized(false).Filterable(false).RenderValueAs(c => @<div style="width:100px; height:150px;"><img alt="Image" style=" height:150px;width:150px;" src="@c.BaslikFoto" /></div>);
+	   Column.Add(m => m.Baslik);
+	  @* Column.Add(m => m.Metin);*@
+	Column.Add(m => m.OlusturmaTarihi).Sortable(false);
+	@*   Column.Add()
+	.RenderValueAs(o => Html.ActionLink("Düzenle", "Duzenle", "grid"))
+	.Encoded(false)
+	.Sanitized(false)
+	.SetWidth(40);*@
+   }).WithPaging(7)
+
+	
+</div>
+<div class="row" style="height:200px;">
+
+</div>

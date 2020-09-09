@@ -1,0 +1,21 @@
+﻿@model IEnumerable<calisartik.Models.iletisim>
+@using GridMvc.Html
+@{
+    ViewBag.Title = "iletisimformu";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<h2>İetişim Formu İletileri</h2>
+
+			<div class="col-11 row text-center justify-content-center">
+				@Html.Grid(Model).Columns(Column =>
+		   {
+		   Column.Add(m => m.Ad);
+		   Column.Add(m => m.Soyad);
+		   Column.Add(m => m.Eposta);
+		   Column.Add(m => m.Mesaj);
+		   Column.Add(m => m.OlusturmaTarihi).Sortable(false);
+				  
+}).WithPaging(7)
+
+
+			</div>

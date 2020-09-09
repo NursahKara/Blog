@@ -1,0 +1,39 @@
+﻿
+@model calisartik.Models.MakaleViewModel
+@{
+    ViewBag.Title = "Kodlama1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kodlama1</h2>
+
+
+
+<div class="container">
+
+	<img class="mt-5 col-8 " src="@Model.BaslikFoto" />
+	<h1 class=" col-8 mt-4 mb-4 text-center">
+		@Html.DisplayFor(model => model.Baslik)
+	</h1>
+	<div class="col-8">
+		@Html.Raw(Model.Metin)
+	</div>
+	<small>
+		@Html.DisplayFor(model => model.Yazar)
+	</small>
+	<form action="~/Home/YorumYaz" method="post" class="col-8">
+		<hr />
+		<div class="row">
+			<label class="col" style="color:red; font:bold; font-size:20px;">YORUM YAPIN...</label>
+		</div>
+		<textarea class="col" rows="6" placeholder="Yorumunuz" name="yorum"></textarea>
+		<input type="hidden" value="@Model.icerikID" name="icerikId" />
+		<button class="btn btn-info mb-5 mt-2" type="submit">Gönder</button>
+	</form>
+	@foreach (var yorum in Model.yorumlar)
+	{
+		<h1>@yorum.YapilanYorum</h1>
+		<h6>@yorum.kullanici</h6>
+	}
+</div>
+

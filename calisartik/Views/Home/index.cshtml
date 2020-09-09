@@ -1,0 +1,183 @@
+﻿@using calisartik.Models
+@{
+	ViewBag.Title = "Anasayfa";
+
+}
+
+
+<div class="container">
+	<div id="carouselExampleInterval" class="carousel slide pt-5 ml-n5 pr-5  " data-ride="carousel" style="width:75%">
+
+
+		<div class="carousel-inner w-100">
+			<div class="carousel-item active " data-interval="10000">
+				<a href="/Home/Makale/@Model.icerikID[0].icerikID" style="text-decoration:none;color: black;">
+					<img src="@Model.icerikID[0].BaslikFoto" style="height: 300px; " title="@Model.icerikID[0].Baslik" class="d-block w-100" />
+				</a>
+
+			</div>
+			@for (int i = 1; i < 5; i++)
+			{
+				<div class="carousel-item" data-interval="10000">
+
+					<a href="/Home/Makale/@Model.icerikID[i].icerikID" style="text-decoration:none;color: black;">
+						<img src="@Model.icerikID[i].BaslikFoto" style="height: 300px; " title="@Model.icerikID[i].Baslik" class="d-block w-100" />
+					</a>
+
+				</div>
+			}
+			<a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next ml-n5" href="#carouselExampleInterval" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+	<hr class="float-left w-75 ml-n5">
+	<br>
+
+
+	<a href="/Home/Makaleler" style="text-decoration: none; color: black;">
+		<h3 class="widget-title py-3 ml-n5" style="border-bottom-color:#001d6d">
+			<span>MAKALE</span>
+		</h3>
+	</a>
+	<div class="row">
+		<div class="w-100 pl-3 pr-5 ml-n5 ">
+			<hr>
+		</div>
+	</div>
+
+	<div class="row py-3 ml-n5 ">
+		<div class="col-6 ">
+			<div class="card w-100 h-100 ml-n3">
+				<a href="/Home/yazilim_gelistirme" style="text-decoration: none">
+					<img src="~/images/yazilim-gelistirme.jpg" class="card-img-top w-100 " title="Yazılım Geliştirme">
+					<h5 class="card-title w-100 mt-3  pr-4 pl-4" style="color: black;">YAZILIM GELİŞTİRME</h5>
+					<p class="card-text  w-100 pl-4 pr-4 mb-2" style="color: black;">
+						Mühendisler plan üretir ve bu planlar kullanılarak ürünler oluşturulur. (Terri Magginnis )
+						<br>
+						Bazı insanlar “yazılım mühendisliği” terimini “bilgisayar programlama” ile aynı anlamda kullanmaktadır. <br>
+						Peki bunun neresi yanlış? İşte bu yazıda, “yazılımlarda neden mühendislik gereklidir?” sorusunun cevabı aranacaktir.
+						<br>
+					</p>
+				</a>
+			</div>
+		</div>
+		<div class="col-5 float-right pl-5 h-100">
+			@foreach (var item in Model.icerikID)
+			{
+				<div class="col pb-3 pl-n5 ">
+					<div class="card w-100" style="height: 75px">
+						<a href="/Home/Makale/@item.icerikID">
+							<img src="@item.BaslikFoto" class="card-img col-6 col-6  pl-0" style="height: 73px"
+								 title="@item.Baslik">
+							<h6 class="card-title float-right col-6 pt-4" style="color: black;font-size: 12px;">@item.Baslik</h6>
+						</a>
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+	<hr class="float-left w-75 ml-n5">
+
+
+	<br>
+	<a href="/Home/kodlama" style="text-decoration: none; color: black;">
+		<h3 class="widget-title py-3 ml-n5" style="border-bottom-color:#001d6d">
+			<span>KODLAMA</span>
+		</h3>
+	</a>
+	<div class="row">
+		<div class=" pl-3 pr-5 ml-n5 ">
+			<hr>
+		</div>
+	</div>
+
+	<div class="row py-3 ml-n5 ">
+		<div class="col-6 ">
+			<div class="card h-100 ml-n3">
+				<a href="/Home/yazilimmuh" style="text-decoration: none">
+					<img src="~/images/yazilim1.jpg" class="card-img-top w-100 " style="height: 235px;" title="Yazılım Mühendisliği">
+					<h5 class="card-title w-100 mt-3  pr-4 pl-4" style="color: black;">YAZILIM MÜHENDİSLİĞİ</h5>
+					<p class="card-text  w-100 pl-4 pr-4 mb-2" style="color: black;">
+						Yazılım mühendisliğin de belirli programlar yoluyla gerekli
+						işler yapılmaktadır. Bir bilgisayar örneğinden yola çıkarak bilgisayar da ki tüm elektronik düzen belli
+						bir komutlar çerçevesin de oluşturulmuştur. İşte bu komutların işlevselliğini yazılım mühendisi
+						gerçekleştirmektedir. Bu örnekte ki bilgisayar gibi...
+					</p>
+				</a>
+			</div>
+		</div>
+		<div class="col-5 float-right pl-5 h-100">
+			<div class="col pb-3 pl-n5 ">
+				<div class="card w-100" style="height: 75px">
+					<a href="/Home/c">
+						<img src="~/images/reactnative.png" class="card-img col-6 col-6  pl-0" style="height: 70px"
+							 title="REACT-NATIVE">
+						<h6 class="card-title float-right col-6 pt-3" style="color: black;font-size: 20px; ">REACT NATIVE</h6>
+					</a>
+				</div>
+			</div>
+			<div class="col pb-3">
+				<div class="card w-100 " style="height: 75px">
+					<a href="/Home/cplus">
+						<img src="~/images/cpp.jpg" class="card-img col-6  pl-0" style="height: 74px"
+							 title="C++">
+						<h6 class="card-title float-right col-6  pt-4" style="color: black;font-size: 24px;">
+							C++
+						</h6>
+					</a>
+				</div>
+			</div>
+
+			<div class="col pb-3">
+				<div class="card w-100 " style="height: 75px">
+					<a href="/Home/csharp">
+						<img src="~/images/csharp.jpg" class="card-img col-6  pl-0" style="height: 74px"
+							 title="C#">
+						<h6 class="card-title float-right col-6 pt-4" style="color: black; font-size: 24px;">
+							C#
+						</h6>
+					</a>
+				</div>
+			</div>
+			<div class="col pb-3">
+				<div class="card w-100" style="height: 75px">
+					<a href="/Home/java">
+						<img src="~/images/java.jpg" class="card-img col-6  pl-0" title="JAVA" style="height: 70px">
+						<h6 class="card-title float-right col-6 pt-4" style="color: black;font-size: 24px;">JAVA </h6>
+					</a>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card w-100" style="height: 75px">
+					<a href="/Home/html">
+						<img src="~/images/htmlcssjavascript.jpg" class="card-img col-6  pl-0 " title="HTML/CSS " style="height: 73px">
+						<h6 class="card-title float-right col-6 pt-3" style="color: black;font-size: 19px;">HTML / CSS JAVASCRIPT </h6>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--<nav aria-label="Page navigation example">
+	  <ul class="pagination justify-content w-25 mt-5">
+		<li class="page-item">
+		  <a class="page-link" href="#" aria-label="Previous">
+			<span aria-hidden="true">&laquo;</span>
+		  </a>
+		<li class="page-item"><a class="page-link" href="#">1</a></li>
+		<li class="page-item"><a class="page-link" href="#">2</a></li>
+		<li class="page-item"><a class="page-link" href="#">3</a></li>
+		<li class="page-item">
+		  <a class="page-link" href="#" aria-label="Next">
+			<span aria-hidden="true">&raquo;</span>
+		  </a>
+		</li>
+	  </ul>
+	</nav>-->
+</div>

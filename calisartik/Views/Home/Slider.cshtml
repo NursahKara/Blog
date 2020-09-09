@@ -1,0 +1,17 @@
+﻿@using calisartik.Models
+@{
+    ViewBag.Title = "Slider";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Slider</h2>
+
+<div class="container">
+
+	<img class="mt-5 col-8 " src="@Model.sliderFoto" />
+	
+	<div class="col-8">
+		@Html.Raw(Model.Metin)
+	</div>
+	
+</div>
